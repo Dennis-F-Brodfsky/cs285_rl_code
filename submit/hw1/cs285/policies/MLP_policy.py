@@ -60,7 +60,7 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
             )
             self.mean_net.to(ptu.device)
             self.logstd = nn.Parameter(
-                torch.zeros(self.ac_dim, dtype=torch.float32, device=ptu.device)+1e-5
+                torch.zeros(self.ac_dim, dtype=torch.float32, device=ptu.device)
             )
             self.logstd.to(ptu.device)
             self.optimizer = optim.Adam(
@@ -100,7 +100,7 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
         if self.discrete:
             return torch.distributions.Categorical(self.logits_na(observation))
         else:
-            return torch.distributions.Normal(self.mean_net(observation), self.logstd)
+            return torch.distributions.Normal(self.mean_net(observation), torch.exp(self.logstd))
         # raise NotImplementedError
 
 
@@ -117,7 +117,7 @@ class MLPPolicySL(MLPPolicy):
             adv_n=None, acs_labels_na=None, qvals=None  # 这几个好像应该不是让我们现在用的。
     ):
         # TODO: update the policy and return the loss
-        observations, actions = ptu.from_numpy(observations.astype(np.float32)), ptu.from_numpy(actions.astype(np.float32))
+        observations, actions = ptu.from_numpy(observations), ptu.from_numpy(actions)
         dist = self(observations)
         loss = - dist.log_prob(actions).mean()
         self.optimizer.zero_grad()
@@ -125,7 +125,7 @@ class MLPPolicySL(MLPPolicy):
         if self.discrete:
             nn.utils.clip_grad_norm_(self.parameters(), max_norm=20)
         else:
-            nn.utils.clip_grad_norm_(self.logstd, max_norm=1e-2)
+            nn.utils.clip_grad_norm_(self.logstd, max_norm=1)
             nn.utils.clip_grad_norm_(self.mean_net.parameters(), max_norm=20)
         self.optimizer.step()
         return {
