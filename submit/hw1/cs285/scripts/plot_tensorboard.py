@@ -12,6 +12,8 @@ def draw_error_bar(tensorboard_paths, names):
     for i, (tensorboard_path, name) in enumerate(zip(tensorboard_paths, names)):
         ea = event_accumulator.EventAccumulator(tensorboard_path)
         ea.Reload()
+        if i == 0:
+            Expert_AverageReturn = ea.scalars.Items('Train_AverageReturn')[0].value
         mean_val = ea.scalars.Items('Eval_AverageReturn')
         std_val = ea.scalars.Items('Eval_StdReturn')
         assert len(mean_val) == len(std_val), 'should be the same steps'
@@ -20,6 +22,7 @@ def draw_error_bar(tensorboard_paths, names):
                     [val.value for val in std_val])
         ax[i].set_title(name)
         ax[i].set_ylabel('Eval_AverageReturn')
+        ax[i].axhline(Expert_AverageReturn, color='r', linestyle='--')
     ax[-1].set_xlabel('Steps')
     fig.savefig('image/Task_Do_Dagger.png')
 
