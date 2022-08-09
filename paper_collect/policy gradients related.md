@@ -1,0 +1,7 @@
+[1] [Trust Region Policy optimization](http://proceedings.mlr.press/v37/schulman15.pdf)
+[2] [Simple statistical gradient-following algorithms for connectionist reinforcement learning: introduces REINFORCE algorithm](https://link.springer.com/article/10.1007/BF00992696)
+[3] [Infinite-horizon policy-gradient estimation: temporally  decomposed policy gradient](https://www.jair.org/index.php/jair/article/download/10289/24545)
+[4] [Reinforcement learning of motor skills with policy gradients: very accessible overview of optimal baselines and natural gradient](https://www.sciencedirect.com/science/article/abs/pii/S0893608008000701?casa_token=FmmvhQtlsMMAAAAA:dR1cUjJnhzyvAiU91wPwehJHhgybO7pDIHwkB5M-YZEEc_6Urv64xvQMSgWryQobjEfYZZWbF1E)
+[5] [Guided policy search: deep RL with importance sampled policy gradient](http://proceedings.mlr.press/v28/levine13.pdf)
+[6] [Trust region policy optimization: deep RL with natural policy gradient and adaptive step size](https://proceedings.mlr.press/v37/schulman15.html)
+[7] [Proximal policy optimization algorithms: deep RL with importance sampled policy gradient](https://arxiv.org/pdf/1707.06347)
