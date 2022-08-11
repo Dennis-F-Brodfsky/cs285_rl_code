@@ -1,0 +1,7 @@
+[1] [Maximum Entropy Inverse Reinforcement Learning](https://www.aaai.org/Papers/AAAI/2008/AAAI08-227.pdf)
+[2] [A connection between generative adversarial networks, inverse reinforcement learning, and energy-based models](https://arxiv.org/pdf/1611.03852.pdf)
+[3] [Learning robust rewards with adversarial inverse reinforcement learning](https://arxiv.org/pdf/1710.11248)
+[4] [Generative adversarial imitation learning](https://proceedings.neurips.cc/paper/2016/file/cc7e2b878868cbae992d1fb743995d8f-Paper.pdf)
+[5] [Apprenticeship learning via inverse reinforcement learning](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.3.6759&rep=rep1&type=pdf)
+[6] [Guided cost learning: Deep inverse optimal control via policy optimization](http://proceedings.mlr.press/v48/finn16.pdf)
+[7] [Deep Maximum Entropy Inverse Reinforcement Learning](https://arxiv.org/pdf/1507.04888)
