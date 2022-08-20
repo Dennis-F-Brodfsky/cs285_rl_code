@@ -1,3 +1,7 @@
+## Reproductions
+
+To Reproduct the result of homework, just cd to the hw1 folder, and run `bash cs285/scripts/run_hw1.sh ` Linux OS And the result is in **homework_result.md**
+
 ## Setup
 
 You can run this code on your own machine or on Google Colab. 
@@ -74,7 +78,3 @@ tensorboard --logdir data/run1,data/run2,data/run3...
 ```
 
 If running on Colab, you will be using the `%tensorboard` [line magic](https://ipython.readthedocs.io/en/stable/interactive/magics.html) to do the same thing; see the [notebook](cs285/scripts/run_hw1.ipynb) for more details.
-
-## Explaination of Homework
-
-To Redo the result of homework, just cd to the hw1 folder, and run `bash cs285/scripts/run_hw1.sh ` And the result is in **homework_result.md**

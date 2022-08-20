@@ -1,10 +1,24 @@
+## Reproduction
+juse use cd to the path of homework, remember to activate your RL conda environment, and do the scripts in cs285\scripts folder. The example command is:
+```
+bash cs285/scripts/run_hw3_dqn.sh
+bash cs285/scripts/run_hw3_actor_critic.sh
+``` 
+if Linux OS
+
+```
+cs285\scripts\run_hw3_dqn.bat
+cs285\scripts\run_hw3_actor_critic.bat
+```
+if Windows.
+
 ## Setup
 
 You can run this code on your own machine or on Google Colab. 
 
-1. **Local option:** If you choose to run locally, you will need to install MuJoCo and some Python packages; see [installation.md](../hw1/installation.md) from homework 1 for instructions. There are two new package requirements (`opencv-python` and `gym[atari]`) beyond what was used in the previous assignments; make sure to install these with `pip install -r requirements.txt` if you are running the assignment locally.
+1. **Local option:** If you choose to run locally, you will need to install MuJoCo and some Python packages; see [installation.md](../hw1/installation.md) from homework 1 for instructions. There are two new package requirements (`opencv-python` and `gym[atari]`) beyond what was used in the previous assignments; make sure to install these with `pip install -r requirements.txt` if you are running the assignment locally. 
 
-2. **Colab:** The first few sections of the notebook will install all required dependencies. You can try out the Colab option by clicking the badges below:
+2. **Colab:** The first few sections of the notebook will install all required dependencies. You can try out the Colab option by clicking the badges below: 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/berkeleydeeprlcourse/homework_fall2021/blob/master/hw3/cs285/scripts/run_hw3_dqn.ipynb) **Part I (Q-learning)** 
 

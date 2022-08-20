@@ -1,3 +1,17 @@
+## Reproduction
+juse use cd to the path of homework, remember to activate your RL conda environment, and do the scripts in cs285\scripts folder. The example command is:
+```
+bash cs285/scripts/run_hw5_expl.sh
+bash cs285/scripts/run_hw5_awac.sh
+``` 
+if Linux OS
+
+```
+cs285\scripts\run_hw4_expl.bat
+cs285\scripts\run_hw4_awac.bat
+```
+if Windows.
+
 ## Setup
 
 You can run this code on your own machine or on Google Colab. 

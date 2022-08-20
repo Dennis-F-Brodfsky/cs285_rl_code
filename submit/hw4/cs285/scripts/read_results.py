@@ -66,7 +66,7 @@ def plot_error_bar(log_files, exp_names, **kwargs):
 def plot_learning_curve(log_files, **kwargs):
     x, y = [], []
     for log_file in log_files:
-        tmp_x, tmp_y = get_section_results(log_file, 'Train_EnvstepsSoFar', 'Eval_AverageReturn')
+        tmp_x, tmp_y = get_section_results(log_file, kwargs['xlabel'], kwargs['ylabel'])
         x.append(tmp_x)
         y.append(tmp_y)
     plot(kwargs['figname'], kwargs['figsize'], x, y, kwargs['xlabel'], kwargs['ylabel'], kwargs['exp_names'], kwargs['xlim'], kwargs['ylim'], fmts=kwargs['format'])

@@ -66,16 +66,24 @@ def plot_error_bar(log_files, exp_names, **kwargs):
 def plot_learning_curve(log_files, **kwargs):
     x, y = [], []
     for log_file in log_files:
-        tmp_x, tmp_y = get_section_results(log_file, 'Train_EnvstepsSoFar', 'Eval_AverageReturn')
-        x.append(tmp_x)
+        tmp_x, tmp_y = get_section_results(log_file, kwargs['xlabel'], kwargs['ylabel'])
+        if len(tmp_x) == len(tmp_y):
+            x.append(tmp_x)
+        else:
+            assert len(tmp_x) == len(tmp_y)+1
+            x.append(tmp_x[1:])
         y.append(tmp_y)
     plot(kwargs['figname'], kwargs['figsize'], x, y, kwargs['xlabel'], kwargs['ylabel'], kwargs['exp_names'], kwargs['xlim'], kwargs['ylim'], fmts=kwargs['format'])
-
+    
 def plot_avg_performance(log_files, **kwargs):
     x, y = [], []
     for log_file in log_files:
-        tmp_x, tmp_y = get_section_results(log_file, 'Train_EnvstepsSoFar', 'Eval_AverageReturn')
-        x.append(tmp_x)
+        tmp_x, tmp_y = get_section_results(log_file, kwargs['xlabel'], kwargs['ylabel'])
+        if len(tmp_x) == len(tmp_y):
+            x.append(tmp_x)
+        else:
+            assert len(tmp_x) == len(tmp_y)+1
+            x.append(tmp_x[1:])
         y.append(tmp_y)
     plot(kwargs['figname'], kwargs['figsize'], np.mean(x, axis=0), np.mean(y, axis=0), kwargs['xlabel'], kwargs['ylabel'], kwargs['exp_names'], kwargs['xlim'], kwargs['ylim'], fmts=kwargs['format'])
 

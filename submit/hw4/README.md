@@ -1,3 +1,15 @@
+## Reproduction
+juse use cd to the path of homework, remember to activate your RL conda environment, and do the scripts in cs285\scripts folder. The example command is:
+```
+bash cs285/scripts/run_hw4_mb.sh
+``` 
+if Linux OS
+
+```
+cs285\scripts\run_hw4_mb.bat
+```
+if Windows.
+
 ## Setup
 
 You can run this code on your own machine or on Google Colab. 
