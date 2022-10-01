@@ -73,8 +73,8 @@ class MPCPolicy(BasePolicy):
                 #      our candidate sequences in order to rank them?)
                 # - Update the elite mean and variance
                 current_action = np.stack([np.random.multivariate_normal(elite_mean[j], elite_var[j], num_sequences) for j in range(horizon)], axis=1)
-                elite_mask = np.argsort(self.evaluate_candidate_sequences(current_action, obs)) >= num_sequences-self.cem_num_elites
-                elite = current_action[elite_mask]
+                elite_mask = np.argsort(self.evaluate_candidate_sequences(current_action, obs))
+                elite = current_action[elite_mask[-self.cem_num_elites:]]
                 elite_mean= np.mean(elite, axis=0)*self.cem_alpha+(1-self.cem_alpha)*elite_mean
                 elite_var = (1-self.cem_alpha)*elite_var + np.stack([np.cov(elite[:, i, :], rowvar=False) for i in range(horizon)])*self.cem_alpha
 
