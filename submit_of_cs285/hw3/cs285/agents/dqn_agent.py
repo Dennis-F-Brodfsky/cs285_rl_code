@@ -70,7 +70,7 @@ class DQNAgent(object):
         # HINT2: remember the following useful function that you've seen before:
             #obs, reward, done, info = env.step(action)
         obs, reward, done, _ = self.env.step(action)
-        self.last_obs = obs
+        self.last_obs = obs.copy()
 
         # TODO store the result of taking this action into the replay buffer
         # HINT1: see your replay buffer's `store_effect` function
@@ -79,7 +79,7 @@ class DQNAgent(object):
 
         # TODO if taking this step resulted in done, reset the env (and the latest observation)
         if done:
-            self.env.reset()
+            self.last_obs = self.env.reset()
 
     def sample(self, batch_size):
         if self.replay_buffer.can_sample(self.batch_size):
